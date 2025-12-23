@@ -1,615 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products • SHOPPER</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./product.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- ---------------- NAVBAR ---------------- -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="./index.html"
+          ><img src="./img/image.png" alt="" width="80" height="50"
+        /></a>
+      </div>
 
-<!-- ---------------- NAVBAR ---------------- -->
-<header class="navbar">
-    <div class="logo"><a href="./index.html">SHOPPER</a> </div>
+      <nav>
+        <ul>
+          <li><a href="./product.html">New Arrivals</a></li>
 
-    <nav>
-        <a href="#">New Arrivals</a>
-        <a href="#">Men</a>
-        <a href="#">Women</a>
-        <a href="#">Kids</a>
-        <a href="#">About Us</a>
-        <a href="#">Contacts</a>
-    </nav>
+          <li class="dropdown-category">
+            <a href="#">Shop</a>
+            <div class="dropdown-content">
+              <a href="./product.html">Men</a>
+              <a href="./product.html">Women</a>
+              <a href="./product.html">Kids</a>
+            </div>
+          </li>
+          <li class="dropdown-category">
+            <a href="#">About Us</a>
+            <div class="dropdown-content">
+              <a href="#">About Us</a>
+              <a href="#">Contacts</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
 
-    <div class="actions">
-        <input type="text" placeholder="Search products...">
+      <div class="actions">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+
         <i class="fa-regular fa-user"></i>
         <i class="fa-regular fa-heart"></i>
         <i class="fa-solid fa-bag-shopping"></i>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div class="page-wrapper">
-
-    <!-- ---------------- FILTER SIDEBAR ---------------- -->
-    <aside class="filters">
+    <div class="page-wrapper">
+      <!-- ---------------- FILTER SIDEBAR ---------------- -->
+      <aside class="filters">
         <h3>Filters</h3>
 
         <div class="filter-box">
-            <p class="filter-title">Category</p>
-            <label><input type="checkbox"> Clothing <span>(245)</span></label>
-            <label><input type="checkbox" checked> Shoes <span>(158)</span></label>
+          <p class="filter-title">Category</p>
+          <label
+            ><input type="checkbox" value="clothing" class="filter-category" />
+            Clothing</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              value="shoes"
+              class="filter-category"
+              checked
+            />
+            Shoes</label
+          >
         </div>
 
         <div class="filter-box">
-            <p class="filter-title">Price Range</p>
-            <label><input type="radio" name="price"> Under $25</label>
-            <label><input type="radio" name="price"> $25 – $50</label>
-            <label><input type="radio" name="price"> $50 – $100</label>
-            <label><input type="radio" name="price"> Over $100</label>
+          <p class="filter-title">Price Range</p>
+          <label
+            ><input type="radio" name="price" value="under25" /> Under
+            $25</label
+          >
+          <label
+            ><input type="radio" name="price" value="25to50" /> $25 – $50</label
+          >
+          <label
+            ><input type="radio" name="price" value="50to100" /> $50 –
+            $100</label
+          >
+          <label
+            ><input type="radio" name="price" value="over100" /> Over
+            $100</label
+          >
         </div>
 
         <div class="filter-box">
-            <p class="filter-title">Color</p>
-            <div class="colors">
-                <span class="color c1"></span>
-                <span class="color c2"></span>
-                <span class="color c3"></span>
-                <span class="color c4"></span>
-                <span class="color c5"></span>
-                <span class="color c6"></span>
-            </div>
+          <p class="filter-title">Color</p>
+          <div class="colors">
+            <span class="color c1"></span>
+            <span class="color c2"></span>
+            <span class="color c3"></span>
+            <span class="color c4"></span>
+            <span class="color c5"></span>
+            <span class="color c6"></span>
+          </div>
         </div>
 
         <div class="filter-box">
-            <p class="filter-title">Size</p>
-            <div class="sizes">
-                <button>XS</button>
-                <button>S</button>
-                <button class="active">M</button>
-                <button>L</button>
-                <button>XL</button>
-                <button>XXL</button>
-            </div>
+          <p class="filter-title">Size</p>
+          <div class="sizes">
+            <button>XXL</button>
+            <button>XS</button>
+            <button>S</button>
+            <button class="active">M</button>
+            <button>L</button>
+            <button>XL</button>
+          </div>
         </div>
 
         <button class="clear-btn">Clear Filters</button>
-    </aside>
+      </aside>
 
-    <!-- ---------------- PRODUCT AREA ---------------- -->
-    <main class="products-area">
-
+      <!-- ---------------- PRODUCT AREA ---------------- -->
+      <main class="products-area">
         <div class="topbar">
-            <h2>Products <span>Showing 1–12 of 245 results</span></h2>
+          <h2>Products <span>Showing 1–12 of 245 results</span></h2>
 
-            <div class="sort">
-                <label>Sort by:</label>
-                <select>
-                    <option>Featured</option>
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                    <option>Newest</option>
-                </select>
-            </div>
+          <div class="sort">
+            <label>Sort by:</label>
+            <select>
+              <option>Featured</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+              <option>Newest</option>
+            </select>
+          </div>
         </div>
 
         <div class="product-grid">
+          <!-- PRODUCT CARD 1 -->
+          <div
+            class="product-card"
+            data-category="shoes"
+            data-price="79.99"
+            data-size="M"
+            data-name="Authentic Shoe"
+          >
+            <span class="tag red">-20%</span>
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1750270765/VN000EE3BLK-HERO/Authentic-Shoe.png"
+              alt=""
+            />
 
-            <!-- PRODUCT CARD 1 -->
-            <div class="product-card">
-                <span class="tag red">-20%</span>
-                <img src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1750270765/VN000EE3BLK-HERO/Authentic-Shoe.png" alt="">
-                <i class="fa-regular fa-heart fav"></i>
+            <i class="fa-regular fa-heart fav"></i>
 
-                <h3>Authentic Shoe</h3>
-                <p class="brand">VANS</p>
+            <h3>Authentic Shoe</h3>
+            <p class="brand">VANS</p>
 
-                <div class="rating">
-                    ★★★★☆ <span>(124)</span>
-                </div>
+            <div class="rating">★★★★☆ <span>(124)</span></div>
 
-                <div class="price">
-                    <strong>$79.99</strong>
-                    <span class="old">$99.99</span>
-                </div>
-
-                <button class="cart-btn"><a href="./item.html">Add to Cart </a> </button>
+            <div class="price">
+              <strong>$79.99</strong>
+              <span class="old">$99.99</span>
             </div>
 
-            <!-- PRODUCT CARD 2 -->
-            <div class="product-card">
-                <span class="tag red">-20%</span>
-                <img src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1756520325/VN000EGABX9-ALT1/Authentic-Shoe.png" alt="">
-                <i class="fa-regular fa-heart fav"></i>
+            <button class="cart-btn">
+              <a href="./item.html">Add to Cart </a>
+            </button>
+          </div>
 
-                <h3>Authentic Shoe</h3>
-                <p class="brand">VANS</p>
-                <div class="rating">★★★★☆ <span>(124)</span></div>
+          <!-- PRODUCT CARD 2 -->
+          <div
+            class="product-card"
+            data-category="shoes"
+            data-price="79.99"
+            data-size="M"
+            data-name="Authentic Shoe"
+          >
+            <span class="tag red">-20%</span>
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1756520325/VN000EGABX9-ALT1/Authentic-Shoe.png"
+              alt=""
+            />
+            <i class="fa-regular fa-heart fav"></i>
 
-                <div class="price">
-                    <strong>$79.99</strong>
-                    <span class="old">$99.99</span>
-                </div>
+            <h3>Authentic Shoe</h3>
+            <p class="brand">VANS</p>
+            <div class="rating">★★★★☆ <span>(124)</span></div>
 
-                <button class="cart-btn"><a href="./item.html">Add to Cart </a> </button>
+            <div class="price">
+              <strong>$79.99</strong>
+              <span class="old">$99.99</span>
             </div>
 
-            <!-- PRODUCT CARD 3 -->
-            <div class="product-card">
-                <span class="tag blue">Popular</span>
-                <img src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1759841935/VN000X9RFS8-HERO/Checkerboard-Long-Sleeve-Shirt.png" alt="">
-                <i class="fa-regular fa-heart fav"></i>
+            <button class="cart-btn">
+              <a href="./item.html">Add to Cart </a>
+            </button>
+          </div>
 
-                <h3>Checkerboard Long Sleeve Shirt</h3>
-                <p class="brand">VANS</p>
-                <div class="rating">★★★★☆ <span>(203)</span></div>
+          <!-- PRODUCT CARD 3 -->
+          <div class="product-card">
+            <span class="tag blue">Popular</span>
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1759841935/VN000X9RFS8-HERO/Checkerboard-Long-Sleeve-Shirt.png"
+              alt=""
+            />
+            <i class="fa-regular fa-heart fav"></i>
 
-                <div class="price">
-                    <strong>$89.99</strong>
-                </div>
+            <h3>Checkerboard Long Sleeve Shirt</h3>
+            <p class="brand">VANS</p>
+            <div class="rating">★★★★☆ <span>(203)</span></div>
 
-                <button class="cart-btn"><a href="./item.html">Add to Cart </a> </button>
+            <div class="price">
+              <strong>$89.99</strong>
             </div>
 
-            <!-- PRODUCT CARD 4 -->
-            <div class="product-card">
-                <span class="tag blue">Popular</span>
-                <img src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1762467167/VN000X9RATH-HERO/Checkerboard-Long-Sleeve-Shirt.jpg" alt="">
-                <i class="fa-regular fa-heart fav"></i>
+            <button class="cart-btn">
+              <a href="./item.html">Add to Cart </a>
+            </button>
+          </div>
 
-                <h3>Checkerboard Long Sleeve Shirt</h3>
-                <p class="brand">VANS</p>
-                <div class="rating">★★★★☆ <span>(203)</span></div>
+          <!-- PRODUCT CARD 4 -->
+          <div class="product-card">
+            <span class="tag blue">Popular</span>
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1762467167/VN000X9RATH-HERO/Checkerboard-Long-Sleeve-Shirt.jpg"
+              alt=""
+            />
+            <i class="fa-regular fa-heart fav"></i>
 
-                <div class="price">
-                    <strong>$89.99</strong>
-                </div>
+            <h3>Checkerboard Long Sleeve Shirt</h3>
+            <p class="brand">VANS</p>
+            <div class="rating">★★★★☆ <span>(203)</span></div>
 
-                <button class="cart-btn"><a href="./item.html">Add to Cart </a> </button>
+            <div class="price">
+              <strong>$89.99</strong>
             </div>
 
-            <!-- PRODUCT CARD 5 -->
-            <div class="product-card">
-                <span class="tag green">New</span>
-                <img src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1753220324/VN000PS2EMV-HERO/Earthbound-TShirt.png" alt="">
-                <i class="fa-regular fa-heart fav"></i>
+            <button class="cart-btn">
+              <a href="./item.html">Add to Cart </a>
+            </button>
+          </div>
 
-                <h3>Earthbound T-Shirt</h3>
-                <p class="brand">Nike</p>
-                <div class="rating">★★★★☆ <span>(124)</span></div>
+          <!-- PRODUCT CARD 5 -->
+          <div class="product-card">
+            <span class="tag green">New</span>
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1753220324/VN000PS2EMV-HERO/Earthbound-TShirt.png"
+              alt=""
+            />
+            <i class="fa-regular fa-heart fav"></i>
 
-                <div class="price">
-                    <strong>$79.99</strong>
-                    <span class="old">$99.99</span>
-                </div>
+            <h3>Earthbound T-Shirt</h3>
+            <p class="brand">Nike</p>
+            <div class="rating">★★★★☆ <span>(124)</span></div>
 
-                <button class="cart-btn"><a href="./item.html">Add to Cart </a> </button>
-            </div>
-            <div class="product-card">
-                <span class="tag green">New</span>
-                <img src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1753220324/VN000PS2EMV-HERO/Earthbound-TShirt.png" alt="">
-                <i class="fa-regular fa-heart fav"></i>
-
-                <h3>Earthbound T-Shirt</h3>
-                <p class="brand">Nike</p>
-                <div class="rating">★★★★☆ <span>(124)</span></div>
-
-                <div class="price">
-                    <strong>$79.99</strong>
-                    <span class="old">$99.99</span>
-                </div>
-
-                <button class="cart-btn"><a href="./item.html">Add to Cart </a> </button>
+            <div class="price">
+              <strong>$79.99</strong>
+              <span class="old">$99.99</span>
             </div>
 
+            <button class="cart-btn">
+              <a href="./item.html">Add to Cart </a>
+            </button>
+          </div>
+          <div class="product-card">
+            <span class="tag green">New</span>
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1753220324/VN000PS2EMV-HERO/Earthbound-TShirt.png"
+              alt=""
+            />
+            <i class="fa-regular fa-heart fav"></i>
+
+            <h3>Earthbound T-Shirt</h3>
+            <p class="brand">Nike</p>
+            <div class="rating">★★★★☆ <span>(124)</span></div>
+
+            <div class="price">
+              <strong>$79.99</strong>
+              <span class="old">$99.99</span>
+            </div>
+
+            <button class="cart-btn">
+              <a href="./item.html">Add to Cart </a>
+            </button>
+          </div>
         </div>
 
         <!-- ---------------- PAGINATION ---------------- -->
         <div class="pagination">
-            <span>‹</span>
-            <span class="active">1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>…</span>
-            <span>21</span>
-            <span>›</span>
+          <span>‹</span>
+          <span class="active">1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>…</span>
+          <span>21</span>
+          <span>›</span>
         </div>
-
-    </main>
-</div>
-
-
-<!-- ---------------- FOOTER ---------------- -->
-<footer>
-    <div class="footer-area">
-
-        <div class="footer-col">
-            <h3>SHOPPER</h3>
-            <p>Premium clothing for the modern gentleman.</p>
-            <div class="icons">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
-        </div>
-
-        <div class="footer-col">
-            <h4>Shop</h4>
-            <a href="#">New Arrivals</a>
-            <a href="#">Clothing</a>
-            <a href="#">Shoes</a>
-            <a href="#">Accessories</a>
-        </div>
-
-        <div class="footer-col">
-            <h4>Support</h4>
-            <a href="#">Contact Us</a>
-            <a href="#">Size Guide</a>
-            <a href="#">Returns</a>
-            <a href="#">FAQ</a>
-        </div>
-
-        <div class="footer-col">
-            <h4>Newsletter</h4>
-            <input type="email" placeholder="Enter your email">
-            <button>Subscribe</button>
-        </div>
-
+      </main>
     </div>
 
-    <p class="copy">© 2025 SHOPPER. All rights reserved.</p>
-</footer>
+    <!-- ---------------- FOOTER ---------------- -->
+    <footer>
+      <div class="footer-area">
+        <div class="footer-col">
+          <h3>SHOPPER</h3>
+          <p>Premium clothing for the modern gentleman.</p>
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
 
-</body>
-<style>
-    /* ---------------- GLOBAL ---------------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#">New Arrivals</a>
+          <a href="#">Clothing</a>
+          <a href="#">Shoes</a>
+          <a href="#">Accessories</a>
+        </div>
 
-body {
-    background: #f7f8fa;
-    color: #111;
-}
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Contact Us</a>
+          <a href="#">Size Guide</a>
+          <a href="#">Returns</a>
+          <a href="#">FAQ</a>
+        </div>
 
-/* ---------------- NAVBAR ---------------- */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: whitesmoke;
-    padding: 18px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #eee;
-    z-index: 1000;
-}
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <input type="email" placeholder="Enter your email" />
+          <button>Subscribe</button>
+        </div>
+      </div>
 
-.logo {
-    font-size: 22px;
-    font-weight: 700;
-}
+      <p class="copy">© 2025 SHOPPER. All rights reserved.</p>
+    </footer>
+    <script>
+      const products = document.querySelectorAll(".product-card");
+      const searchInput = document.getElementById("searchInput");
+      const categoryFilters = document.querySelectorAll(".filter-category");
+      const priceFilters = document.querySelectorAll('input[name="price"]');
+      const sizeButtons = document.querySelectorAll(".sizes button");
 
-.navbar nav a {
-    margin: 0 12px;
-    text-decoration: none;
-    color: #333;
-    font-size: 15px;
-}
+      let selectedSize = "M";
 
-.navbar .actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+      function filterProducts() {
+        const searchText = searchInput.value.toLowerCase();
 
-.navbar input {
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
+        const selectedCategories = [...categoryFilters]
+          .filter((cb) => cb.checked)
+          .map((cb) => cb.value);
 
-.navbar i {
-    font-size: 18px;
-    cursor: pointer;
-}
+        const selectedPrice = [...priceFilters].find((r) => r.checked)?.value;
 
-/* ---------------- PAGE WRAPPER ---------------- */
-.page-wrapper {
-    display: flex;
-    padding: 120px 50px 50px;
-    gap: 40px;
-}
+        products.forEach((product) => {
+          const name = product.dataset.name.toLowerCase();
+          const category = product.dataset.category;
+          const price = parseFloat(product.dataset.price);
+          const size = product.dataset.size;
 
-/* ---------------- FILTER SIDEBAR ---------------- */
-.filters {
-    width: 260px;
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    height: fit-content;
-    border: 1px solid #eee;
-}
+          let visible = true;
 
-.filters h3 {
-    margin-bottom: 20px;
-}
+          // Search
+          if (!name.includes(searchText)) visible = false;
 
-.filter-box {
-    margin-bottom: 25px;
-}
+          // Category
+          if (
+            selectedCategories.length &&
+            !selectedCategories.includes(category)
+          ) {
+            visible = false;
+          }
 
-.filter-title {
-    font-weight: 600;
-    margin-bottom: 10px;
-}
+          // Price
+          if (selectedPrice) {
+            if (selectedPrice === "under25" && price >= 25) visible = false;
+            if (selectedPrice === "25to50" && (price < 25 || price > 50))
+              visible = false;
+            if (selectedPrice === "50to100" && (price < 50 || price > 100))
+              visible = false;
+            if (selectedPrice === "over100" && price <= 100) visible = false;
+          }
 
-.filter-box label {
-    display: block;
-    margin: 6px 0;
-    font-size: 15px;
-}
+          // Size
+          if (size !== selectedSize) visible = false;
 
-.colors {
-    display: flex;
-    gap: 10px;
-}
+          product.style.display = visible ? "block" : "none";
+        });
+      }
 
-.color {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
+      searchInput.addEventListener("input", filterProducts);
+      categoryFilters.forEach((cb) =>
+        cb.addEventListener("change", filterProducts)
+      );
+      priceFilters.forEach((r) => r.addEventListener("change", filterProducts));
 
-.c1 { background: #f44336; }
-.c2 { background: #ff9800; }
-.c3 { background: #ffee00; }
-.c4 { background: #25d366; }
-.c5 { background: #3f51b5; }
-.c6 { background: #e91e63; }
-
-.sizes {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.sizes button {
-    padding: 6px 12px;
-    border: 1px solid #ddd;
-    background: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.sizes .active {
-    background: #111;
-    color: #fff;
-}
-
-.clear-btn {
-    width: 100%;
-    padding: 10px;
-    background: #111;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-/* ---------------- PRODUCTS AREA ---------------- */
-.products-area {
-    flex: 1;
-}
-
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-.topbar h2 {
-    font-size: 22px;
-}
-
-.topbar h2 span {
-    font-size: 15px;
-    color: #777;
-    margin-left: 10px;
-}
-
-.sort label {
-    font-size: 14px;
-    margin-right: 8px;
-}
-
-.sort select {
-    padding: 8px 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-/* ---------------- PRODUCT GRID ---------------- */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    gap: 25px;
-}
-
-.product-card {
-    background: #fff;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #eee;
-    position: relative;
-}
-
-.product-card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.tag {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    padding: 4px 10px;
-    font-size: 12px;
-    border-radius: 6px;
-    color: #fff;
-}
-
-.red { background: #ff4d4d; }
-.blue { background: #3f8cff; }
-.green { background: #4caf50; }
-
-.fav {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 19px;
-    cursor: pointer;
-}
-
-.product-card h3 {
-    font-size: 17px;
-    margin: 10px 0 3px;
-}
-
-.product-card .brand {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 6px;
-}
-
-.rating {
-    font-size: 15px;
-}
-
-.rating span {
-    color: #999;
-}
-
-.price {
-    margin: 10px 0;
-}
-
-.price strong {
-    font-size: 18px;
-}
-
-.old {
-    text-decoration: line-through;
-    color: #888;
-    margin-left: 5px;
-}
-
-.cart-btn {
-    width: 100%;
-    padding: 10px;
-    background: #111;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-.cart-btn a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-
-/* ---------------- PAGINATION ---------------- */
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.pagination span {
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    color: #333;
-}
-a{
-    color: #0e0e16;
-    
-}
-
-.pagination .active {
-    background: #111;
-    color: #fff;
-}
-
-/* ---------------- FOOTER ---------------- */
-footer {
-    background: #0e0e16;
-    color: #fff;
-    padding: 50px 50px 30px;
-    margin-top: 60px;
-}
-
-.footer-area {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-col h3,
-.footer-col h4 {
-    margin-bottom: 15px;
-}
-
-.footer-col a {
-    display: block;
-    color: #bbb;
-    margin: 5px 0;
-    text-decoration: none;
-}
-
-.footer-col input {
-    padding: 10px;
-    width: 180px;
-    border-radius: 6px;
-    border: none;
-    margin-bottom: 10px;
-}
-
-.footer-col button {
-    padding: 10px 15px;
-    background: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.icons i {
-    margin-right: 10px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.copy {
-    text-align: center;
-    margin-top: 40px;
-    color: #aaa;
-}
-
-</style>
+      sizeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          sizeButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          selectedSize = btn.textContent;
+          filterProducts();
+        });
+      });
+    </script>
+  </body>
 </html>

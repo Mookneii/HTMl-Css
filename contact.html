@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classic Bomber Jacket</title>
+    <link rel="stylesheet" href="./contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="./index.html"
+          ><img src="./img/image.png" alt="" width="80" height="50"
+        /></a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="./product.html">New Arrivals</a></li>
+
+          <li class="dropdown-category">
+            <a href="#">Shop</a>
+            <div class="dropdown-content">
+              <a href="./product.html">Men</a>
+              <a href="./product.html">Women</a>
+              <a href="./product.html">Kids</a>
+            </div>
+          </li>
+          <li class="dropdown-category">
+            <a href="#">About Us</a>
+            <div class="dropdown-content">
+              <a href="#">About Us</a>
+              <a href="#">Contacts</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <input type="text" placeholder="Search products..." />
+        <i class="fa-regular fa-user"><a href="./login.html"></a></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-bag-shopping"></i>
+      </div>
+    </header>
+
+    <section class="contact-container">
+      <!-- LEFT -->
+      <div class="form-box">
+        <h3>Send us a message</h3>
+        <p>
+          Fill out the form below and we’ll get back to you within 24 hours.
+        </p>
+
+        <div class="row">
+          <input type="text" placeholder="First Name" />
+          <input type="text" placeholder="Last Name" />
+        </div>
+
+        <input type="email" placeholder="Email Address" />
+        <input type="tel" placeholder="Phone Number" />
+        <input type="text" placeholder="Subject" />
+        <textarea placeholder="Tell us about your inquiry"></textarea>
+
+        <button class="send-btn">Send Message</button>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="info-box">
+        <h3>Visit our store</h3>
+        <p>Experience luxury in person at our flagship location</p>
+
+        <div class="info">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>123 Toul Kok, PP</span>
+        </div>
+
+        <div class="info">
+          <i class="fa-solid fa-phone"></i>
+          <span>+855 123456789</span>
+        </div>
+
+        <div class="info">
+          <i class="fa-solid fa-envelope"></i>
+          <span>contact@gmail.com</span>
+        </div>
+
+        <div class="info">
+          <i class="fa-solid fa-clock"></i>
+          <span>24h per day</span>
+        </div>
+
+        <div class="map">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <p>Interactive Map</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-area">
+        <div class="footer-col">
+          <h3>SHOPPER</h3>
+          <p>Premium clothing for the modern gentleman.</p>
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#">New Arrivals</a>
+          <a href="#">Clothing</a>
+          <a href="#">Shoes</a>
+          <a href="#">Accessories</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Contact Us</a>
+          <a href="#">FAQ</a>
+          <a href="#">Returns</a>
+          <a href="#">Size Guide</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <input type="email" placeholder="Enter your email" />
+          <button>Subscribe</button>
+        </div>
+      </div>
+
+      <p class="copy">© 2025 SHOPPER. All rights reserved.</p>
+      <script>
+        const toggleBtn = document.getElementById("themeToggle");
+
+        toggleBtn.addEventListener("click", () => {
+          document.body.classList.toggle("dark");
+
+          toggleBtn.innerHTML = document.body.classList.contains("dark")
+            ? '<i class="fa-solid fa-sun"></i>'
+            : '<i class="fa-solid fa-moon"></i>';
+        });
+      </script>
+    </footer>
+  </body>
+</html>

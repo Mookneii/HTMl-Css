@@ -1,0 +1,513 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #222;
+}
+
+/* ---------------- NAVBAR ---------------- */
+/* --- General Navbar Styles (Mostly the same) --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.95); /* slightly transparent */
+    backdrop-filter: blur(6px); /* smooth blur effect */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 9999;   /* IMPORTANT: stays above everything */
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.actions input {
+    padding: 7px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* --- Base Navigation List Styles --- */
+nav ul {
+    list-style: none; /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aligns all main list items horizontally */
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    display: block; /* Important for padding/touch area */
+    padding: 5px 0; /* Add slight vertical padding to links */
+}
+
+/* --- Dropdown Specific Styles --- */
+
+.dropdown-category {
+    /* Required for positioning the submenu relative to the main link */
+    position: relative; 
+}
+
+.dropdown-content {
+    /* POSITIONING & APPEARANCE */
+    display: none; /* HIDES the dropdown by default */
+    position: absolute; /* Takes it out of the normal flow */
+    background-color: white; 
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 10; /* Ensures it appears above other page content */
+    top: 100%; /* Position it right below the main category link */
+    left: -15px; /* Adjust slightly to align with the main link */
+    border-radius: 5px;
+    padding: 5px 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block; /* Ensures links take up full width for easy clicking */
+    font-size: 14px;
+}
+
+/* --- Hover Effects --- */
+
+/* Show the dropdown menu when hovering over the main list item */
+.dropdown-category:hover .dropdown-content {
+    display: block;
+}
+
+/* Optional: Add hover style for the dropdown links */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Optional: Add a hover style for the main nav links/category */
+nav a:hover {
+    color: teal;
+}
+
+/* ------------- HERO SECTION ------------- */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideAnimation 12s infinite;
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+
+/* Fade animation */
+@keyframes slideAnimation {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    30% { opacity: 1; }
+    38% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.slide-text {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.slide-text h2 {
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 2.5rem;
+}
+
+.slide-text .sub {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+button:hover {
+    background: black;
+    color: white;
+}
+
+/* ---------- SECTION STYLES ---------- */
+.section {
+    padding: 50px 80px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.section-sub {
+    margin-top: 5px;
+    font-size: 15px;
+    color: #666;
+}
+
+/* ---------- Product Grid ---------- */
+.product-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* ---------- Card ---------- */
+.card {
+    position: relative;
+    padding: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    transition: .4s;
+}
+
+.card:hover img {
+    transform: scale(1.07);
+}
+
+/* ---------- Overlay on Hover ---------- */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .35s;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+/* ---------- View More Button ---------- */
+.view-btn {
+    padding: 10px 25px;
+    font-size: 15px;
+    border: none;
+    background: #fff;
+    color: #000;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+.card:hover .view-btn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.view-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+
+
+/* ---------- Recommend ---------- */
+.recommend-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.recommend-card {
+    background: #fff;
+    border-radius: 12px;
+    width: 230px;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.recommend-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Image zoom */
+.recommend-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: .4s;
+}
+
+.recommend-card:hover img {
+    transform: scale(1.07);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .35s ease;
+    border-radius: 12px;
+}
+
+.recommend-card:hover .overlay {
+    opacity: 1;
+}
+
+/* View More button */
+.view-btn {
+    padding: 9px 22px;
+    background: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: .3s ease;
+}
+
+.recommend-card:hover .view-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.view-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Text styling */
+.recommend-card h4 {
+    margin: 12px 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.cat {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+.recommend-card span {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    background: #0f1d2d;
+    color: white;
+    padding: 40px 80px;
+    margin-top: 60px;
+}
+
+.footer-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-col h4,
+.footer-col h3 {
+    margin-bottom: 15px;
+}
+
+.footer-col a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-col input {
+    padding: 8px;
+    width: 180px;
+    border-radius: 5px;
+    border: none;
+}
+
+.footer-col button {
+    padding: 8px 15px;
+    margin-top: 10px;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px 25px;
+    }
+
+    .section {
+        padding: 40px 30px;
+    }
+
+    .hero-slider {
+        height: 80vh;
+    }
+
+    .slide-text h2 {
+        font-size: 2rem;
+        padding: 0 20px;
+    }
+
+    .footer-area {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-top: 1px solid #eee;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .actions input {
+        display: none;
+    }
+
+    .menu-toggle {
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    /* HERO */
+    .hero-slider {
+        height: 70vh;
+    }
+
+    .slide-text h2 {
+        font-size: 1.6rem;
+    }
+
+    /* GRIDS */
+    .product-grid,
+    .recommend-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 30px 25px;
+    }
+
+    .footer-area {
+        flex-direction: column;
+        gap: 25px;
+    }
+}

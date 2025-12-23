@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classic Bomber Jacket</title>
+    <link rel="stylesheet" href="./checkOut2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <header class="navbar">
+      <div class="logo"><a href="./index.html"><img src="./img/image.png" alt="" width="80" height="50"></a></div>
+
+      <nav>
+        <ul>
+          <li><a href="./product.html">New Arrivals</a></li>
+
+          <li class="dropdown-category">
+            <a href="#">Shop</a>
+            <div class="dropdown-content">
+              <a href="./product.html">Men</a>
+              <a href="./product.html">Women</a>
+              <a href="./product.html">Kids</a>
+            </div>
+          </li>
+          <li class="dropdown-category">
+            <a href="#">About Us</a>
+            <div class="dropdown-content">
+              <a href="#">About Us</a>
+              <a href="#">Contacts</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <input type="text" placeholder="Search products..." />
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-bag-shopping"></i>
+      </div>
+    </header>
+
+    <section class="checkout-wrap">
+      <h2>Checkout</h2>
+      <p class="subtitle">Complete your purchase in just a few steps</p>
+
+      <!-- STEPS -->
+      <div class="stepper">
+        <div class="step active">1</div>
+        <div class="step-line"></div>
+        <div class="step active">2</div>
+        <div class="step-line"></div>
+        <div class="step active">3</div>
+      </div>
+
+      <div class="checkout-grid">
+        <!-- LEFT -->
+        <div class="card">
+          <h3>📦 Shipping Information</h3>
+          <div class="info-box">
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Address:</strong> 123 Main Street, Phnom Penh</p>
+            <p><strong>Phone:</strong> +855 123 456 789</p>
+            <p><strong>Shipping Method:</strong> Bus (1–2 days)</p>
+          </div>
+
+          <h3 class="mt">💳 Payment Method</h3>
+          <div class="info-box">
+            <p>Credit Card</p>
+            <p>Visa •••• 4242</p>
+          </div>
+
+
+          <div class="nav-row">
+            <a href="./checkOut.html">← Back to Cart</a>
+            <button class="primary-btn">
+              <a href="">Payment →</a>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="card summary">
+          <h3>Order Summary</h3>
+
+          <div class="summary-item">
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1750981751/VN000DAQZO2-HERO/Sk8Hi-Waterproof-Insulated-Shoe.jpg"
+            />
+            <div>
+              <p>Sk8-Hi Waterproof Insulated Shoe</p>
+              <small>White · Qty 1</small>
+            </div>
+            <strong>$299.00</strong>
+          </div>
+
+          <div class="summary-item">
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1759841538/VN000PSMFS8-HERO/Stormcast-Long-Sleeve-TShirt.png"
+            />
+            <div>
+              <p>Stormcast Long Sleeve T-Shirt</p>
+              <small>White · Qty 2</small>
+            </div>
+            <strong>$158.00</strong>
+          </div>
+
+          <div class="line"></div>
+
+          <div class="row"><span>Subtotal</span><span>$169.97</span></div>
+          <div class="row"><span>Shipping</span><span>$5.99</span></div>
+          <div class="row"><span>Tax</span><span>$14.88</span></div>
+
+          <div class="total-row">
+            <span>Total</span>
+            <span>$190.84</span>
+          </div>
+
+          <div class="return-box">
+            ✅ Free Returns
+            <small>If not the same as picture</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-area">
+        <div class="footer-col">
+          <h3>SHOPPER</h3>
+          <p>Premium clothing for the modern gentleman.</p>
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#">New Arrivals</a>
+          <a href="#">Clothing</a>
+          <a href="#">Shoes</a>
+          <a href="#">Accessories</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Contact Us</a>
+          <a href="#">FAQ</a>
+          <a href="#">Returns</a>
+          <a href="#">Size Guide</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <input type="email" placeholder="Enter your email" />
+          <button>Subscribe</button>
+        </div>
+      </div>
+
+      <p class="copy">© 2025 SHOPPER. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

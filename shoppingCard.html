@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classic Bomber Jacket</title>
+    <link rel="stylesheet" href="./shoppingCard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- NAV -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="./index.html"
+          ><img src="./img/image.png" alt="" width="80" height="50"
+        /></a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="./product.html">New Arrivals</a></li>
+
+          <li class="dropdown-category">
+            <a href="#">Shop</a>
+            <div class="dropdown-content">
+              <a href="./product.html">Men</a>
+              <a href="./product.html">Women</a>
+              <a href="./product.html">Kids</a>
+            </div>
+          </li>
+          <li class="dropdown-category">
+            <a href="#">About Us</a>
+            <div class="dropdown-content">
+              <a href="#">About Us</a>
+              <a href="#">Contacts</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="actions">
+        <input type="text" placeholder="Search products..." />
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <i class="fa-solid fa-bag-shopping"></i>
+      </div>
+    </header>
+
+    <!-- CART -->
+    <section class="cart-page">
+      <h1>Shopping Cart</h1>
+      <p class="subtitle">3 items in your cart</p>
+
+      <div class="cart-layout">
+        <!-- LEFT -->
+        <div class="cart-items">
+          <h3>Your Items</h3>
+
+          <!-- ITEM -->
+          <div class="cart-item">
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1750981751/VN000DAQZO2-HERO/Sk8Hi-Waterproof-Insulated-Shoe.jpg"
+            />
+            <div class="item-info">
+              <h4>Sk8-Hi Waterproof Insulated Shoe</h4>
+              <p>Multi-Terrain, Icon, Waterproof, Insulated, Cushioning</p>
+              <div class="item-options">
+                <span>Size: M</span>
+                <span
+                  >Color:
+                  <span class="dot white"></span>
+                  <span class="dot black"></span>
+                </span>
+              </div>
+              <div class="qty">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+              </div>
+            </div>
+            <div class="item-price">
+              $299.00
+              <i class="fa-solid fa-trash"></i>
+            </div>
+          </div>
+
+          <!-- ITEM -->
+          <div class="cart-item">
+            <img
+              src="https://assets.vans.com/images/t_img/c_fill,g_center,f_auto,h_573,e_unsharp_mask:100,w_458/dpr_2.0/v1759841538/VN000PSMFS8-HERO/Stormcast-Long-Sleeve-TShirt.png"
+            />
+            <div class="item-info">
+              <h4>Stormcast Long Sleeve T-Shirt</h4>
+              <p>Men's - Loose Fit</p>
+              <div class="item-options">
+                <span>Size: M</span>
+                <span
+                  >Color:
+                  <span class="dot white"></span>
+                  <span class="dot lightblue"></span>
+                </span>
+              </div>
+              <div class="qty">
+                <button>-</button>
+                <span>2</span>
+                <button>+</button>
+              </div>
+            </div>
+            <div class="item-price">
+              $158.00
+              <i class="fa-solid fa-trash"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+
+          <div class="summary-row">
+            <span>Subtotal</span><span>$457.00</span>
+          </div>
+          <div class="summary-row"><span>Shipping</span><span>$0.00</span></div>
+          <div class="summary-row"><span>Tax</span><span>$52.88</span></div>
+
+          <hr />
+
+          <div class="summary-row total">
+            <span>Total</span><span>$509.88</span>
+          </div>
+
+          <button class="checkout">
+            <a href="./checkOut.html">Proceed to Checkout</a>
+          </button>
+          <button class="continue"><a href="">Continue Shopping</a></button>
+
+          <div class="delivery-info">
+            <p>🚚 Free shipping on orders over $100</p>
+            <p>🔄 30-day return policy</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-area">
+        <div class="footer-col">
+          <h3>SHOPPER</h3>
+          <p>Premium clothing for the modern gentleman.</p>
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#">New Arrivals</a>
+          <a href="#">Clothing</a>
+          <a href="#">Shoes</a>
+          <a href="#">Accessories</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Contact Us</a>
+          <a href="#">FAQ</a>
+          <a href="#">Returns</a>
+          <a href="#">Size Guide</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <input type="email" placeholder="Enter your email" />
+          <button>Subscribe</button>
+        </div>
+      </div>
+
+      <p class="copy">© 2025 SHOPPER. All rights reserved.</p>
+    </footer>
+
+    <script>
+      /* ---------------- CART LOGIC ---------------- */
+      function updateTotals() {
+        let subtotal = 0;
+
+        document.querySelectorAll(".cart-item").forEach((item) => {
+          const priceText =
+            item.querySelector(".item-price").childNodes[0].textContent;
+          const price = parseFloat(priceText.replace("$", ""));
+          const qty = parseInt(item.querySelector(".qty span").textContent);
+          subtotal += price * qty;
+        });
+
+        const tax = subtotal * 0.115; // 11.5% tax
+        const total = subtotal + tax;
+
+        document.querySelector(
+          ".summary-row span:last-child"
+        ).textContent = `$${subtotal.toFixed(2)}`;
+        document
+          .querySelectorAll(".summary-row")[2]
+          .querySelector("span:last-child").textContent = `$${tax.toFixed(2)}`;
+        document.querySelector(
+          ".total span:last-child"
+        ).textContent = `$${total.toFixed(2)}`;
+      }
+
+      /* ---------------- QUANTITY BUTTONS ---------------- */
+      document.querySelectorAll(".cart-item").forEach((item) => {
+        const minus = item.querySelector(".qty button:first-child");
+        const plus = item.querySelector(".qty button:last-child");
+        const qtyText = item.querySelector(".qty span");
+
+        minus.addEventListener("click", () => {
+          let qty = parseInt(qtyText.textContent);
+          if (qty > 1) {
+            qty--;
+            qtyText.textContent = qty;
+            updateTotals();
+          }
+        });
+
+        plus.addEventListener("click", () => {
+          let qty = parseInt(qtyText.textContent);
+          qty++;
+          qtyText.textContent = qty;
+          updateTotals();
+        });
+      });
+
+      /* ---------------- REMOVE ITEM ---------------- */
+      document.querySelectorAll(".fa-trash").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          btn.closest(".cart-item").remove();
+          updateTotals();
+        });
+      });
+
+      /* ---------------- SEARCH FILTER ---------------- */
+      const searchInput = document.querySelector(".actions input");
+
+      searchInput.addEventListener("input", () => {
+        const keyword = searchInput.value.toLowerCase();
+
+        document.querySelectorAll(".cart-item").forEach((item) => {
+          const name = item.querySelector("h4").textContent.toLowerCase();
+          item.style.display = name.includes(keyword) ? "flex" : "none";
+        });
+      });
+
+      /* INIT */
+      updateTotals();
+    </script>
+  </body>
+</html>

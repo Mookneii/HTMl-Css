@@ -1,0 +1,648 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #222;
+}
+
+/* NAVBAR */
+/* ---------------- NAVBAR ---------------- */
+/* --- General Navbar Styles (Mostly the same) --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.95); /* slightly transparent */
+    backdrop-filter: blur(6px); /* smooth blur effect */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 9999;   /* IMPORTANT: stays above everything */
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.actions input {
+    padding: 7px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* --- Base Navigation List Styles --- */
+nav ul {
+    list-style: none; /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aligns all main list items horizontally */
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    display: block; /* Important for padding/touch area */
+    padding: 5px 0; /* Add slight vertical padding to links */
+}
+
+/* --- Dropdown Specific Styles --- */
+
+.dropdown-category {
+    /* Required for positioning the submenu relative to the main link */
+    position: relative; 
+}
+
+.dropdown-content {
+    /* POSITIONING & APPEARANCE */
+    display: none; /* HIDES the dropdown by default */
+    position: absolute; /* Takes it out of the normal flow */
+    background-color: white; 
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 10; /* Ensures it appears above other page content */
+    top: 100%; /* Position it right below the main category link */
+    left: -15px; /* Adjust slightly to align with the main link */
+    border-radius: 5px;
+    padding: 5px 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block; /* Ensures links take up full width for easy clicking */
+    font-size: 14px;
+}
+
+/* --- Hover Effects --- */
+
+/* Show the dropdown menu when hovering over the main list item */
+.dropdown-category:hover .dropdown-content {
+    display: block;
+}
+
+/* Optional: Add hover style for the dropdown links */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Optional: Add a hover style for the main nav links/category */
+nav a:hover {
+    color: teal;
+}
+
+/* PRODUCT PAGE */
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.product-page {
+    display: flex;
+    gap: 60px;
+    padding: 60px 100px;
+}
+
+/* GALLERY */
+.product-gallery {
+    width: 50%;
+}
+
+.main-img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.thumb-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.thumb-row img {
+    width: 80px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+}
+
+.thumb-row img:hover {
+    border-color: #000;
+}
+
+/* INFO */
+.product-info {
+    width: 50%;
+}
+
+.collection {
+    color: #888;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.product-info h1 {
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.rating p {
+    color: #666;
+    font-size: 14px;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.price-section h2 {
+    font-size: 26px;
+}
+
+.old-price {
+    color: #888;
+    text-decoration: line-through;
+}
+
+.discount {
+    background: #ff4d4d;
+    color: white;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+/* SECTIONS */
+.section-title {
+    margin-top: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* COLORS */
+.color-options {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.color {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ddd;
+}
+
+.color.active {
+    border: 2px solid #000;
+}
+
+.navy { background: #2a3d66; }
+.green { background: #3c6e47; }
+.brown { background: #8d6147; }
+.black { background: #000; }
+
+/* SIZE */
+.size-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.size-btn {
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    background: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.size-btn:hover {
+    background: #f2f2f2;
+}
+
+.size-btn.active {
+    background: #000;
+    color: #fff;
+}
+
+/* QUANTITY */
+.quantity-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.qty-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #fff;
+    cursor: pointer;
+}
+
+.qty {
+    font-weight: bold;
+}
+
+/* CART */
+.add-cart {
+    margin-top: 25px;
+    width: 100%;
+    padding: 15px;
+    background: #000;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-cart:hover {
+    background: #222;
+}
+
+/* DELIVERY */
+.delivery-info {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* DESCRIPTION */
+/* HIDE RADIO BUTTONS */
+.description-box input {
+    display: none;
+}
+
+/* SECTION */
+.description-box {
+    padding: 40px 100px;
+    background: #f6f6f6;
+    border-radius: 14px;
+}
+
+/* TAB BAR */
+.tabs {
+    display: inline-flex;
+    gap: 8px;
+    background: #e9e9e9;
+    padding: 6px;
+    border-radius: 12px;
+}
+
+/* TAB BUTTON */
+.tabs label {
+    cursor: pointer;
+    padding: 10px 22px;
+    font-weight: 600;
+    border-radius: 10px;
+    color: #555;
+    background: transparent;
+    transition: all 0.25s ease;
+}
+
+/* ACTIVE TAB */
+#tab-desc:checked ~ .tabs label[for="tab-desc"],
+#tab-details:checked ~ .tabs label[for="tab-details"],
+#tab-reviews:checked ~ .tabs label[for="tab-reviews"] {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* TAB HOVER */
+.tabs label:hover {
+    background: rgba(255,255,255,0.6);
+}
+
+/* CONTENT BOX */
+.tab-content {
+    display: none;
+    margin-top: 20px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 14px;
+    line-height: 1.7;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* SHOW ACTIVE CONTENT */
+#tab-desc:checked ~ .desc,
+#tab-details:checked ~ .details,
+#tab-reviews:checked ~ .reviews {
+    display: block;
+}
+
+/* LIST */
+.tab-content ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.tab-content li {
+    margin-bottom: 6px;
+}
+
+
+
+
+.tabs .active {
+    border-bottom: 2px solid #000;
+}
+
+.description-text {
+    margin-top: 25px;
+    line-height: 1.7;
+}
+.delivery-info {
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    background: #fafafa;
+}
+
+.delivery-info p {
+    font-size: 16px;      
+    font-weight: 600;
+    color: #333;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* ---------- SECTION STYLES ---------- */
+.section {
+    padding: 50px 80px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.section-sub {
+    margin-top: 5px;
+    font-size: 15px;
+    color: #666;
+}
+
+/* ---------- Recommend ---------- */
+.recommend-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.recommend-card {
+    background: #fff;
+    border-radius: 12px;
+    width: 230px;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.recommend-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Image zoom */
+.recommend-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: .4s;
+}
+
+.recommend-card:hover img {
+    transform: scale(1.07);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .35s ease;
+    border-radius: 12px;
+}
+
+.recommend-card:hover .overlay {
+    opacity: 1;
+}
+
+/* View More button */
+.view-btn {
+    padding: 9px 22px;
+    background: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: .3s ease;
+}
+
+.recommend-card:hover .view-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.view-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Text styling */
+.recommend-card h4 {
+    margin: 12px 0 4px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.cat {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 6px;
+}
+
+.recommend-card span {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: #0f1d2d;
+    color: white;
+    padding: 40px 80px;
+    margin-top: 60px;
+}
+
+.footer-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-col h4,
+.footer-col h3 {
+    margin-bottom: 15px;
+}
+
+.footer-col a {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-col input {
+    padding: 8px;
+    width: 180px;
+    border-radius: 5px;
+    border: none;
+}
+
+.footer-col button {
+    padding: 8px 15px;
+    margin-top: 10px;
+    background: white;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-top: 1px solid #eee;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .actions input {
+        display: none;
+    }
+
+    .menu-toggle {
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+  .actions input {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .product-page {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .product-gallery,
+  .product-info {
+    width: 100%;
+  }
+
+  .thumb-row img {
+    width: 60px;
+  }
+
+  .description-box {
+    padding: 30px 20px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+  }
+
+  .section {
+    padding: 40px 20px;
+  }
+
+  .footer-area {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media (max-width: 1024px) {
+  .product-page {
+    padding: 50px 40px;
+  }
+
+  .description-box {
+    padding: 40px;
+  }
+}
